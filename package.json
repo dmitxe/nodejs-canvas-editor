@@ -1,0 +1,28 @@
+{
+  "name": "canvas",
+  "version": "1.0.0",
+  "description": "���������� ����� ��� ��������� - ��������\r ================",
+  "main": "server.js",
+  "dependencies": {
+    "delivery": "^0.0.6",
+    "express": "^4.16.4",
+    "mime-types": "^2.1.22",
+    "socket.io": "^2.2.0",
+    "socket.io-redis": "^5.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitxe/nodejs-canvas-editor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmitxe/nodejs-canvas-editor/issues"
+  },
+  "homepage": "https://github.com/dmitxe/nodejs-canvas-editor#readme"
+}
