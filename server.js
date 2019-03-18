@@ -1,3 +1,5 @@
+'use strict';
+
 const config = require('./canvas/config');
 var dl  = require('delivery');
 var fs = require('fs');
@@ -18,7 +20,7 @@ var app = require('./canvas/app');
 var io;
 if (IS_SSL) {
   var https = require('https');
-  httpsOptions = {
+  var httpsOptions = {
     key: fs.readFileSync(config.httpsKey), // путь к ключу
     cert: fs.readFileSync(config.httpsCert) // путь к сертификату
   }
@@ -259,7 +261,7 @@ io.sockets.on('connection', function (client) {
 
 function messageHandler(msg) {
   if (msg.cmd && msg.cmd === 'notifyRequest') {
-    numReqs += 1;
+  //  numReqs += 1;
   }
 }
 
