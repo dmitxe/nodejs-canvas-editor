@@ -1,0 +1,94 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:none;}table{border-collapse:collapse;border-spacing:0;}.clearfix:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}.clearfix{display:inline-block;}html[xmlns] .clearfix{display:block;}* html .clearfix{height:1%;}
+
+body {
+	background: #081218;
+}
+#app-main-body {
+	width: 800px;
+	margin: auto;
+	height: 500px;
+	position: relative;
+	z-index: 1;
+}
+#canvas-board {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 2;
+	background-color: white;
+}
+#canvas-board-temp {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	z-index: 3;
+}
+#player {
+	width: 100%;
+	height: 100%;
+	background-color: #17a2b8;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+#drawing-mode-options {
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	background: #f5f2f0;
+	padding: 10px;
+	color: #333;
+}
+#drawing-mode-options label {
+	display: inline-block; width: 130px;
+}
+.info {
+	display: inline-block;
+	width: 25px;
+	background: #ffc;
+}
+#canvas-editor-buttons {
+	color: #333;
+}
+#canvas-editor-buttons a {
+	color: #333;
+}
+#canvas-editor-settings {
+	position: absolute;
+	right: 20px;
+	bottom: 0;
+	z-index: 999;
+}
+#canvas-editor-settings-panel {
+	display: inline-block;
+	margin-left: 10px;
+}
+#canvas-editor-buttons .tools {
+	text-decoration: none;
+}
+#canvas-editor-buttons .tools.active {
+	color: rgb(220, 53, 69);
+}
+#canvas-pointer-remote {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	color: #333;
+}
+#canvas-text-container {
+	position: absolute;
+	border: dotted #00f 1px;
+	background: none;
+	margin: 0;
+	padding: 0;
+	outline-width: 0;
+	word-wrap: break-word;
+	overflow: hidden;
+	resize: both;
+	z-index: 999;
+}
