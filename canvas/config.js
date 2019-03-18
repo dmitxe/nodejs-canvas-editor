@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = {
 //    serverSSL: true,
     serverSSL: false,

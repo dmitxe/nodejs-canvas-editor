@@ -33,9 +33,9 @@ if (IS_SSL) {
 }
 
 io.listen(server, options);
-var redis = require('socket.io-redis');
+//var redis = require('socket.io-redis');
 
-io.adapter(redis(process.env.REDISTOGO_URL));
+//io.adapter(redis(process.env.REDISTOGO_URL));
 
 // Count requests
 function messageMaster(msg) {

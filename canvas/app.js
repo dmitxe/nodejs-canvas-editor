@@ -1,3 +1,5 @@
+"use strict";
+
 var express = require('express');
 var app = express();
 app.use('/static', express.static(__dirname + '/static'));
