@@ -14,6 +14,8 @@
 
 Простейшее рисование на канве: http://www.williammalone.com/articles/create-html5-canvas-javascript-drawing-app/
 
+Для загрузки фонового видео использован этот видеоплеер: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki
+
 ## Installation
 
 npm install
