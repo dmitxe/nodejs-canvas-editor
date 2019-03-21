@@ -838,6 +838,10 @@
     },
     youtubeLoad: function () {
       YoutubePlayer.videoId = $('#youtube-video-id').val();
+      if (!YoutubePlayer.youtubeValidate()) {
+        YoutubePlayer.videoId = '';
+        return false;
+      }
       console.log('YoutubePlayer.videoId', YoutubePlayer.videoId);
       YoutubePlayer.isLoading = false;
       YoutubePlayer.player = jQuery("#player");
@@ -932,7 +936,7 @@
         }
       }
     },
-    youtubePlay: function () {
+    youtubeValidate: function() {
       if (YoutubePlayer.videoId === '') {
         console.log('Need to insert video ID');
         return false;
@@ -944,6 +948,12 @@
           console.log('video ID is not correct');
           return false;
         }
+      }
+      return true;
+    },
+    youtubePlay: function () {
+      if (!YoutubePlayer.youtubeValidate()) {
+        return false;
       }
 
       console.log('YoutubePlayer.isPlaying', YoutubePlayer.isPlaying);
