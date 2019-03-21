@@ -656,10 +656,8 @@
             }
             var image_width_k = App.ctx.canvas.height*image_k;
             var image_height_k;
-            if (image_width_k <= App.ctx.canvas.width) {
-              image_height_k = App.ctx.canvas.height;
-            } else {
-              image_height_k = image_height;
+            image_height_k = App.ctx.canvas.height;
+            if (image_width_k > App.ctx.canvas.width) {
               if (image_width_k != 0) {
                 var image_j = App.ctx.canvas.width/image_width_k;
                 image_width_k = App.ctx.canvas.width;
