@@ -92,13 +92,4 @@ body {
 	resize: both;
 	z-index: 999;
 }
-#player-container {
-	width: 100%;
-	height: 100%;
-	background-color: #17a2b8;
-	position: absolute;
-	top: 0;
-	z-index: 1;
-}
-.
 
