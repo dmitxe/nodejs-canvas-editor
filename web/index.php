@@ -17,6 +17,7 @@ $node_server = $node_scheme . '://' . $_SERVER['SERVER_NAME'] . ':4000';
 	<meta charset="UTF-8">
 	<!-- https://www.eyecon.ro/colorpicker/#about -->
 	<link rel="stylesheet" media="screen" type="text/css" href="css/fontawesome-all.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="css/jquery.mb.YTPlayer.min.css" />
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.event.drag-2.0.js"></script>
 	<script src="<?= $node_server ?>/socket.io/socket.io.js"></script>
