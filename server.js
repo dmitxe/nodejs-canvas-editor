@@ -257,6 +257,52 @@ io.sockets.on('connection', function (client) {
       client.emit('errorServer', {action: 'pointerRemote', message: 'Нет обязательных параметров'  });
     }
   });
+
+  client.on('youtubeLoad', function(data) {
+    //       console.log('youtubeLoad', data);
+    if (('room_id' in data) && ('videoId' in data) && ('volume' in data)) {
+      client.to('room_'+data.room_id).emit('youtubeLoad', { videoId: data.videoId, volume: data.volume });
+    } else {
+      client.emit('errorServer', {action: 'youtubeLoad', message: 'Нет обязательных параметров'  });
+    }
+  });
+
+  client.on('youtubePlay', function(data) {
+    console.log('youtubePlay', data);
+    if (('room_id' in data) && ('videoId' in data) && ('progress' in data)) {
+      client.to('room_'+data.room_id).emit('youtubePlay', { videoId: data.videoId, progress: data.progress });
+    } else {
+      client.emit('errorServer', {action: 'youtubePlay', message: 'Нет обязательных параметров'  });
+    }
+  });
+
+  client.on('youtubeStop', function(data) {
+//        console.log('youtubeStop', data);
+    if (('room_id' in data) && ('videoId' in data)) {
+      client.to('room_'+data.room_id).emit('youtubeStop', { videoId: data.videoId });
+    } else {
+      client.emit('errorServer', {action: 'youtubeStop', message: 'Нет обязательных параметров'  });
+    }
+  });
+
+  client.on('youtubeVolume', function(data) {
+//        console.log('youtubeVolume', data);
+    if (('room_id' in data) && ('volume' in data)) {
+      client.to('room_'+data.room_id).emit('youtubeVolume', { volume: data.volume });
+    } else {
+      client.emit('errorServer', {action: 'youtubeVolume', message: 'Нет обязательных параметров'  });
+    }
+  });
+
+  client.on('youtubeProgress', function(data) {
+//        console.log('youtubeProgress', data);
+    if (('room_id' in data) && ('progress' in data)) {
+      client.to('room_'+data.room_id).emit('youtubeProgress', { progress: data.progress });
+    } else {
+      client.emit('errorServer', {action: 'youtubeProgress', message: 'Нет обязательных параметров'  });
+    }
+  });
+
 });
 
 function messageHandler(msg) {

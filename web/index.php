@@ -21,14 +21,18 @@ $node_server = $node_scheme . '://' . $_SERVER['SERVER_NAME'] . ':4000';
 	<script type="text/javascript" src="js/jquery.event.drag-2.0.js"></script>
 	<script src="<?= $node_server ?>/socket.io/socket.io.js"></script>
 	<!--<script src="js/siofu/client.js"></script>-->
-	<script src="js/delivery/delivery.js"></script>
+    <script src="js/delivery/delivery.js"></script>
+    <script src="js/jquery.mb.YTPlayer.js"></script>
 	<script type="text/javascript" src="scripts.js"></script>
 	<link rel="stylesheet" href="css/style.css" />
 
 	<title>Совместная доска для рисования</title>
 </head>
-<body>
+<body onclick="console.log('clicked');">
 <div id="app-main-body">
+    <div id="player-container">
+        <div id="player"></div>
+    </div>
 	<canvas id="canvas-board"></canvas>
 	<canvas id="canvas-board-temp" style="display: none;"></canvas>
 	<div id="canvas-pointer-remote" title="Ваш собеседник сейчас находиться здесь">
@@ -37,7 +41,7 @@ $node_server = $node_scheme . '://' . $_SERVER['SERVER_NAME'] . ':4000';
 	</div>
 	<textarea id="canvas-text-container" style="width: 0; height: 0;"></textarea>
 	<div id="canvas-editor-buttons">
-		<button id="clear-canvas">Clear</button>
+		<button id="clear-canvas">Очистить экран</button>
 		<input type="file" id="file-bg-canvas-board">
 		<a href="javascript:void(0)" id="show-settings-canvas">
 			<i class="fas fa-cog"></i>
@@ -73,22 +77,51 @@ $node_server = $node_scheme . '://' . $_SERVER['SERVER_NAME'] . ':4000';
 	<div id="canvas-editor-settings" style="display: none;">
 		<div id="canvas-editor-settings-panel">
 			<div id="drawing-mode-options">
-				<label for="drawing-line-width">Line width:</label>
+				<label for="drawing-line-width">Ширина линий:</label>
 				<span class="info line-width">5</span>
 				<input type="range" value="5" min="0" max="150" id="drawing-line-width">
 				<br>
-				<label for="drawing-color">Line color:</label>
+				<label for="drawing-color">Цвет:</label>
 				<input type="color" value="#ECD018" id="drawing-color">
 				<br>
-				<label for="drawing-font-size">Font Size:</label>
+				<label for="drawing-font-size">Размер шрифта:</label>
 				<span class="info font-size">14</span>
 				<input type="range" value="14" min="1" max="64" id="drawing-font-size">
 				<br>
 			</div>
 		</div>
 	</div>
+    <div id="video-bg-controls">
+        <input type="text" placeholder="youtube ID" id="youtube-video-id">
+        <input type="button" value="Загрузить видео" id="youtube-load">
+        <input type="button" value="PLAY" id="youtube-play">
+        <input type="button" value="STOP" id="youtube-stop">
+        <input id="youtube-volume" type="range" min="0" max="100" step="1" value="100" title="Громкость">
+        <input id="youtube-progress" type="range" min="0" max="100" step="1" value="0" title="Прогресс">
+    </div>
+
 </div>
 
+<!--<p>
+    <button id="yt_btn" onclick="check1();">check</button>
+</p>-->
+<div>
+ <!--   <iframe src="https://www.youtube.com/embed/QH2-TGUlwu4?rel=0" width="800" height="600" frameborder="0"></iframe>-->
+ <!--   <iframe id="frame_yt" width="800" height="600" src="https://www.youtube-nocookie.com/embed/rnNUAkHjjLE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+ -->
+</div>
 
+<script type="text/javascript">
+   /* $(document).ready(function () {
+        console.log('ssss');
+        var elem = $("#frame_yt").contents().find('body').html('Hey, i`ve changed content of <body>! Yay!!!');
+        console.log('elem',elem);
+    });
+    function check1() {
+        var elem = $("#frame_yt").contents().find(".ytp-pause-overlay").remove();
+        console.log('elem',elem);
+        elem.hide();
+    }*/
+</script>
 </body>
 
